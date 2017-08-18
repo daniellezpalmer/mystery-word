@@ -6,8 +6,11 @@ const expressValidator = require('express-validator');
 const app = express();
 
 const words = require('./words')
-let moreWords = words[0]
-console.log(moreWords)
+const wordsArray = words;
+console.log(wordsArray)
+
+let randomWord = wordsArray[Math.floor(Math.random() * wordsArray.length)];
+console.log(randomWord)
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
