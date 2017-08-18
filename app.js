@@ -5,6 +5,10 @@ const expressSession = require('express-session')
 const expressValidator = require('express-validator');
 const app = express();
 
+const words = require('./words')
+let moreWords = words[0]
+console.log(moreWords)
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(expressValidator());

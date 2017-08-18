@@ -1,4 +1,5 @@
-  let words =[
+module.exports =
+[
   'pizza',
   'zippy',
   'quick',
