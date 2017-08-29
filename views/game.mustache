@@ -6,19 +6,22 @@
   </head>
   <body>
     <div class="container">
-      <div class="wordsSpaces">
-          <p>Blanks for Random Word</p>
+      <div class="blanks">
+          <p>{{blanks}}</p>
       </div>
       <div class="guessNHint">
         <div class="guesses">
-          <p># of guesses left</p>
+          <p>You have guessed {{#letters}}{{.}}, {{/letters}}</p>
+          <p>You have guesses left</p>
         </div>
-        <div class="{{hint}}">
+        <div class="hint">
           <p>Have a Hint</p>
         </div>
         <div class="letterSubmit">
-          <input type="text" name="guesses" value="" placeholder="Guess a letter!">
-          <button type="submit" name="button">Guess!</button>
+          <form class="" action="/" method="post">
+            <input type="text" name="guesses" value="" placeholder="Guess a letter!">
+            <input type="submit" name="submit" value="Guess!">
+          </form>
         </div>
       </div>
     </div>
