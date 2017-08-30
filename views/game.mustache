@@ -7,21 +7,31 @@
   <body>
     <div class="container">
       <div class="blanks">
-          <p>{{blanks}}</p>
+        {{#lettersArray}}
+      <!-- Show the number of letters in the word -->
+          {{#guessed}}
+            <span>{{letterKey}}</span>
+          {{/guessed}}
+          {{^guessed}}
+            <span>_ </span>
+          {{/guessed}}
+        {{/lettersArray}}
       </div>
       <div class="guessNHint">
         <div class="guesses">
-          <p>You have guessed {{#letters}}{{.}}, {{/letters}}</p>
+          <p>You have guessed {{#letters}}<span>{{.}}</span>{{/letters}}
+          </p>
           <p>You have guesses left</p>
         </div>
         <div class="hint">
           <p>Have a Hint</p>
         </div>
         <div class="letterSubmit">
-          <form class="" action="/" method="post">
+          <form class="" action="/post" method="post">
             <input type="text" name="guesses" value="" placeholder="Guess a letter!">
             <input type="submit" name="submit" value="Guess!">
           </form>
+          {{#errors}}{{msg}}{{/errors}}
         </div>
       </div>
     </div>
